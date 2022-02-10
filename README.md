@@ -4,10 +4,10 @@
 This repository contains a homework submission.
 
 ```text
-JHED=
-GITHUB_USERNAME=
-GITHUB_REPO=
-NETLIFY_SITE=
+JHED=ehsieh2
+GITHUB_USERNAME=ehsieh2
+GITHUB_REPO=cs280spring-classroom/space-invaders-ehsieh2
+NETLIFY_SITE=https://space-invaders-ehsieh2.netlify.app/
 ```
 
 Please refer to the description of Homework-2, Full-Stack JavaScript (Spring 2022) for details.
