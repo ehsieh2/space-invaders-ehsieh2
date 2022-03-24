@@ -5,4 +5,8 @@ class Missile extends Sprite{
         super(x, y, 10, 20, 0, -5);
         this.image.src = "./assets/missile.png";
     }
+
+    onScreen() {
+        return this.y < 0;
+    }
 }
