@@ -15,6 +15,16 @@ class Tank extends Sprite {
         document.addEventListener("keypress", this.keyPress.bind(this));
     }
 
+    move(cWidth) {
+        super.move();
+
+        if (this.x <= -1) {
+            this.x = 0;
+        } else if (this.x + this.width > cWidth) {
+            this.x = cWidth - this.width;
+        }
+    }
+
     //keyUp
     keyUp(e) {
         if (e.key === "Left" || e.key === "ArrowLeft" || e.key === "Right" || e.key === "ArrowRight") {
@@ -38,5 +48,9 @@ class Tank extends Sprite {
         if (e.key === " ") {
             this.shoot = true;
         }
+    }
+
+    hit(alien) {
+        return this.intersect(alien);
     }
 }
