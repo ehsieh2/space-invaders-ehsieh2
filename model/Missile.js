@@ -6,7 +6,7 @@ class Missile extends Sprite{
         this.image.src = "../assets/missile.png";
     }
 
-    onScreen() {
+    offScreen() {
         return this.y < 0;
     }
 }

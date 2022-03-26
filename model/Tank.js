@@ -50,7 +50,9 @@ class Tank extends Sprite {
         }
     }
 
-    hit(alien) {
+    hits(alien) {
         return this.intersect(alien);
     }
 }
+
+export default Tank;
