@@ -1,7 +1,6 @@
-import Game from "./model/Game";
 import "./style.css";
-
+import Game from "./model/Game";
 
 const canvas = document.getElementById("myCanvas");
-let game  = new Game(canvas);
+const game  = new Game(canvas);
 game.playGame();

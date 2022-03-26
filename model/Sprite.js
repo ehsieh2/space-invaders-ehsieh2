@@ -1,8 +1,8 @@
 class Sprite {
   constructor(x, y, width, height, dx, dy) {
     //super(x, y, width, height, color);
-    this.dx = dx;
-    this.dy = dy;
+    this.x = x;
+    this.y = y;
     this.width = width;
     this.height = height;
     this.dx = dx;

@@ -8,10 +8,10 @@ class Alien extends Sprite {
 
     move(cWidth) {
         this.dx = Math.random() * 2;
-        // randomize jiggle direction
-        // if (Math.random() < 0.5) {
-        //     this.dx = -this.dx;
-        // }
+    
+        if (Math.random() < 0.5) {
+            this.dx = -this.dx;
+        }
 
         super.move();
 

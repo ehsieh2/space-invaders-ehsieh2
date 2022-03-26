@@ -1,6 +1,6 @@
-import Alien from "./model/Alien.js";
-import Missile from "./model/Missile.js";
-import Tank from "./model/Tank.js";
+import Alien from "./Alien.js";
+import Missile from "./Missile.js";
+import Tank from "./Tank.js";
 
 class Game {
     constructor(canvas) {
@@ -48,7 +48,7 @@ class Game {
         this.ctx.fillText("Invaders shot down: " + this.score, 10, 20); //8?
 
         if (this.gameOver) {
-            this.ctx.fillText("Game Over!", 8, 40);
+            this.ctx.fillText("Game Over!", 10, 40);
         } else {
             this.ctx.fillText("Missiles remaining: " + (10 - this.missiles.length), 10, 40); //8?
         }
@@ -65,11 +65,11 @@ class Game {
                 this.aliens[i].draw(this.ctx);
                 this.aliens[i].move(this.canvas.width);
 
-                for (let j = 0; j < this.missiles.length; j++) {
-                    if (this.aliens[i] != null && this.aliens[i].hits(this.missiles[i])) {
+                for (let x = 0; x < this.missiles.length; x++) {
+                    if (this.aliens[i] != null && this.aliens[i].hits(this.missiles[x])) {
                         this.score++;
                         this.deleteAlien(i);
-                        this.deleteMissile(i);
+                        this.deleteMissile(x);
 
                         this.explosionSound.load();
                         this.explosionSound.play();
@@ -92,7 +92,7 @@ class Game {
                 if (this.missiles[i].offScreen()) {
                     this.deleteMissile(i);
                 } else {
-                    this.missiles[i].draw(ctx);
+                    this.missiles[i].draw(this.ctx);
                     this.missiles[i].move();
                 }
             }
