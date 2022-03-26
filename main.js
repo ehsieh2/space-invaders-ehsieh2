@@ -36,11 +36,30 @@ function handleAliens() {
 }
 
 function handleMissile() {
+  if (missiles.length <= 9 && tank.shoot) {
+    missiles.push(new Missile(tank.x + 20, tank.y));
+    missileSound.load();
+    missileSound.play();
+    tank.shoot = false;
+  }
 
+  for (let i = 0; i < missiles.length; i++) {
+    if (missiles[i] != null) {
+      if (missiles[i].offScreen()) {
+        deleteMissile(i);
+      } else {
+        missiles[i].draw(ctx);
+        missiles[i].move();
+      }
+    }
+  }
 }
 
 function spawn() {
-
+  if (Math.random() < 0.05) {
+    //location and speed
+    this.aliens.push(new Alien(this.canvas.width * Math.random(), 0, Math.random() * 2 + 2));
+  }
 }
 
 
