@@ -37,8 +37,11 @@ class Game {
 
         if (this.gameOver) {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.tank = new Tank(this.canvas.width / 2 - 25, this.canvas.height - 60);
+            this.tank.draw(this.ctx);
             this.displayText();
             this.music.pause();
+            this.explosionSound.play();
         } else {
             window.requestAnimationFrame(this.playGame.bind(this)); //check this
         }
@@ -102,9 +105,9 @@ class Game {
     }
 
     spawn() {
-        if (Math.random() < 0.002) {
+        if (Math.random() < 0.007) {
             //location and speed
-            this.aliens.push(new Alien(this.canvas.width * Math.random(), 0, Math.random() * 2 + 2));
+            this.aliens.push(new Alien(this.canvas.width * Math.random(), 0, Math.random() * 2 + 1));
         }
     }
 
