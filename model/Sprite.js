@@ -30,10 +30,10 @@ class Sprite {
       return false; //not valid images
     }
 
-    thingHeight = thing2.height + thing2.y;
-    thingWidth = thing2.width + thing2.x;
-    thisWidth = this.width + this.x;
-    thisHeight = this.height + this.y;
+    const thingHeight = thing2.height + thing2.y;
+    const thingWidth = thing2.width + thing2.x;
+    const thisWidth = this.width + this.x;
+    const thisHeight = this.height + this.y;
 
     return (thingWidth < thing2.x || thingWidth > this.x) && (thingHeight < thing2.y || thingHeight > this.y) && (thisWidth < this.x || thisWidth > thing2.x) && (thisHeight < this.y || thisHeight > thing2.y);
   }

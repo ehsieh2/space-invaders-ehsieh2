@@ -8,7 +8,7 @@ class Tank extends Sprite {
         this.image.src = "../assets/tank.png";
 
         this.shoot = false;
-        this.move = false;
+        this.moved = false;
 
         document.addEventListener("keydown", this.keyDown.bind(this));
         document.addEventListener("keyup", this.keyUp.bind(this));
@@ -37,7 +37,7 @@ class Tank extends Sprite {
         if (e.key === "Left" || e.key === "ArrowLeft") {
             this.dx = -this.displacement;
         } else if (e.key === "Right" || e.key === "ArrowRight") {
-            this.dx == this.displacement;
+            this.dx = this.displacement;
         }
 
         this.moved = true;

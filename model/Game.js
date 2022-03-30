@@ -2,6 +2,8 @@ import Alien from "./Alien.js";
 import Missile from "./Missile.js";
 import Tank from "./Tank.js";
 
+//NEED TO ADD BOOM SOUND WHEN TANK IS HIT
+
 class Game {
     constructor(canvas) {
         this.canvas = canvas;
@@ -21,7 +23,7 @@ class Game {
 
     playGame() {
     //run game here
-        thisctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.tank.draw(this.ctx);
         this.displayText();
 
@@ -100,7 +102,7 @@ class Game {
     }
 
     spawn() {
-        if (Math.random() < 0.05) {
+        if (Math.random() < 0.002) {
             //location and speed
             this.aliens.push(new Alien(this.canvas.width * Math.random(), 0, Math.random() * 2 + 2));
         }
